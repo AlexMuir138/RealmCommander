@@ -26,3 +26,6 @@
 /Users/alexmuir/source/codeworks/RealmCommander/obj/Debug/net5.0/ref/RealmCommander.dll
 /Users/alexmuir/source/codeworks/RealmCommander/obj/Debug/net5.0/RealmCommander.pdb
 /Users/alexmuir/source/codeworks/RealmCommander/obj/Debug/net5.0/RealmCommander.genruntimeconfig.cache
+/Users/alexmuir/source/codeworks/RealmCommander/bin/Debug/net5.0/BCrypt.Net-Core.dll
+/Users/alexmuir/source/codeworks/RealmCommander/bin/Debug/net5.0/Dapper.dll
+/Users/alexmuir/source/codeworks/RealmCommander/bin/Debug/net5.0/MySqlConnector.dll

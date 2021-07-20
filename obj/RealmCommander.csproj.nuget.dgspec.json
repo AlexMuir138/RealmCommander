@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[5.6.3, )"
             },
+            "bcrypt.net-core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "dapper": {
               "target": "Package",
               "version": "[2.0.90, )"

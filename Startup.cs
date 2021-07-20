@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -11,6 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MySqlConnector;
+using RealmCommander.Repositories;
+using RealmCommander.Services;
 
 namespace RealmCommander
 {
@@ -32,9 +36,20 @@ namespace RealmCommander
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RealmCommander", Version = "v1" });
             });
+            //vvv Make sure you add this layer or it will not recognize your IDbConnection
+            services.AddTransient<IDbConnection>(x => CreateDbConnection());
+            //Never forget to add your transients!!!
+            services.AddTransient<KnightsRepository>();
+            services.AddTransient<KnightsService>();
+            services.AddTransient<QuestsRepository>();
+            services.AddTransient<QuestsService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        private IDbConnection CreateDbConnection()
+        {
+            string connectionString = Configuration["CONNECTION_STRING"];
+            return new MySqlConnection(connectionString);
+        }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

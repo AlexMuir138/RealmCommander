@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using RealmCommander.Models;
+using RealmCommander.Services;
 
 namespace RealmCommander.Controllers
  {
@@ -6,25 +9,28 @@ namespace RealmCommander.Controllers
    [ApiController]
    public class KnightsController : ControllerBase
    {
-     //GET ALL
-     [HttpGet]
-     public void GetAll()
-     {
+    private readonly KnightsService _service;
 
+    //GET ALL
+    [HttpGet]
+     public ActionResult<IEnumerable<Knight>> GetAll()
+     {
+       return Ok(_service.Find());
      }
 
      //Get ONE by ID
      [HttpGet("{id}")]
-     public void GetById(int id)
+     public ActionResult<Knight> GetById(int id)
      {
+       return Ok(_service.FindById(id));
        
      }
 
      //CREATE
      [HttpPost]
-     public void Create()
+     public ActionResult<Knight> Create([FromBody] Knight knight)
      {
-
+       return Ok(_service.Create(knight));
      }
 
      //EDIT
@@ -36,9 +42,14 @@ namespace RealmCommander.Controllers
 
      //DELETE
      [HttpDelete("{id}")]
-     public void Delete(int id)
+     public ActionResult<bool> Delete(int id)
      {
+       return Ok(_service.Delete(id));
+     }
 
+     public KnightsController(KnightsService service)
+     {
+         _service = service;
      }
    }
  }

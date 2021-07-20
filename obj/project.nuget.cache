@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "twsw/SCixM+Q+N//YVUnnmewXYuhKThPF0xF2bfOL1K491PK+Y9RLEA9HrRSB54oNZ/nPgEZoF5U9v2qZmVxWg==",
+  "dgSpecHash": "eOTTM250WQxnvY7K4dGDf1cuGN/GfGmkyitfDcgf2DRr4RT9uK3+LgAozp9gphk+vdUAQC3bWzg+LoNhjp286A==",
   "success": true,
   "projectFilePath": "/Users/alexmuir/source/codeworks/RealmCommander/RealmCommander.csproj",
   "expectedPackageFiles": [
+    "/Users/alexmuir/.nuget/packages/bcrypt.net-core/1.6.0/bcrypt.net-core.1.6.0.nupkg.sha512",
     "/Users/alexmuir/.nuget/packages/dapper/2.0.90/dapper.2.0.90.nupkg.sha512",
     "/Users/alexmuir/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/alexmuir/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
